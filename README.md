@@ -12,7 +12,7 @@ Reddit Post https://www.reddit.com/r/homeautomation/comments/5e0550/presumably_c
 
 
 To use this library
-
+```sh
 import wifiStat as stat
 import time
 
@@ -26,3 +26,4 @@ schedule = 'W,4,30,67,70;L,6,30,60,65;R,19,0,67,70;S,22,0,60,65' # Check reddit 
 seccode = str(stat.login(wifistat_ip, wifistat_port, wifistat_password))
 stat.set_time(wifistat_ip, wifistat_port, seccode, str(epoch))
 stat.send_schedule(wifistat_ip, wifistat_port, seccode, day, schedule))
+```
