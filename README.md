@@ -2,7 +2,7 @@
 A Python Library for the WifiStat
 
 The wifiStat is an inexpensive thermostat sold on e-bay. Based on the work of a redditor 
-reverse engineering the protocol I have started creating a python library for it. This is no frills
+reverse engineering the protocol I have started creating a python library for it. This is no frills,
 no error handling, no class, and especially no brains. Error handling is on you, as I am only publishing this
 because some other person may be interested. So far the interaction with the wifiStat is slow and sometimes clunky.
 After a couple of requests the thermostat seems to stop responding. This will work for now, I may do something 
