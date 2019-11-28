@@ -3,7 +3,7 @@
 """
 Created on Tue Nov 26 18:16:22 2019
 
-@author: John
+@author: johncanty
 """
 import socket
 import re
@@ -24,6 +24,7 @@ def login(ip, port, password):
         seccode = str(re.findall('(\d{4})', response))
     else:
         seccode = 666
+    seccode = seccode.strip("['']")
     return seccode
 
 def send_schedule(ip, port, seccode, day, schedule):
@@ -38,7 +39,6 @@ def send_schedule(ip, port, seccode, day, schedule):
 def set_time(ip, port, seccode, time):
     command = str(time + ':' + seccode + '*S_T')
     response = str(wifistat_send(ip, port, str.encode(command)))
-    print(response)
     if re.search("(S_T1)", response) is not None:
         status = 0
     else:
@@ -50,7 +50,7 @@ def set_time(ip, port, seccode, time):
 
 # Get the security code from the thermostat. This is usually a 4 digit number that lets the thermostat
 # Know that you have logged in sucessfully.
-
+    
 #seccode = str(login('10.10.11.54', int(8899), 'test'))
 
 # Send a schedule to the thermostat
